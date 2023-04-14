@@ -4,15 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.15.11",
+    "eslint-config-standard-with-typescript": "^34.0.1",
     "git-commit-msg-linter": "^4.9.4",
-    "typescript": "^5.0.4",
-    "eslint-config-standard-with-typescript": "^34.0.1"
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.1",
+    "typescript": "^5.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint 'src/**' --fix",
+      "git add"
+    ]
   }
 }

@@ -2,10 +2,10 @@ export default {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   coverageDirectory: 'coverage',
-  collectCoverage: true,
   testEnvironment: 'node',
   coverageProvider: 'v8',
   transform: { '.+\\.ts$': 'ts-jest' }
+  // collectCoverage: true,
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
